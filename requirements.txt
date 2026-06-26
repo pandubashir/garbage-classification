@@ -1,0 +1,16 @@
+# Web Framework
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# Production WSGI Server
+gunicorn==21.2.0
+
+# Machine Learning
+tensorflow==2.12.0
+numpy==1.23.5
+
+# Image Processing
+Pillow==9.5.0
+
+# Utilities
+python-dotenv==1.0.0

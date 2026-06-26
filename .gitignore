@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Flask
+instance/
+.webassets-cache
+
+# Uploads (user-uploaded images, tidak perlu di-commit)
+static/uploads/*
+!static/uploads/.gitkeep
+
+# Model (file besar, upload manual atau via Git LFS)
+# Uncomment baris di bawah jika model terlalu besar untuk GitHub (>100MB)
+# model/*.h5
+# model/*.tgz
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+notebook/.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+logs/

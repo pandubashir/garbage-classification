@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garbage Classification</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ── Header ────────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-badge">
+      <span class="dot"></span>
+      ResNet50 · Transfer Learning
+    </div>
+    <h1>Garbage <span>Classification</span></h1>
+    <p>Upload an image and the model will identify the type of waste in under a second.</p>
+  </header>
+
+  <!-- ── Error ─────────────────────────────────────────────────────────────── -->
+  {% if error %}
+  <div class="error-box">
+    <span class="error-icon">⚠</span>
+    <span>{{ error }}</span>
+  </div>
+  {% endif %}
+
+  <!-- ── Upload Card ────────────────────────────────────────────────────────── -->
+  {% if not result %}
+  <div class="card">
+    <form id="upload-form" method="POST" enctype="multipart/form-data">
+
+      <!-- Image preview (hidden until file selected) -->
+      <div id="preview-wrapper" class="preview-wrapper">
+        <img id="preview-img" src="" alt="Preview" />
+        <button type="button" id="preview-remove" class="preview-remove" title="Remove">✕</button>
+        <div id="preview-filename" class="preview-filename"></div>
+      </div>
+
+      <!-- Drop zone (hidden after file selected) -->
+      <div id="upload-zone" class="upload-zone">
+        <input type="file" id="file-input" name="file" accept=".png,.jpg,.jpeg,.gif" />
+        <span class="upload-icon">🗂️</span>
+        <h3>Drop your image here</h3>
+        <p>or <span>browse to upload</span> &nbsp;·&nbsp; PNG, JPG, GIF up to 5 MB</p>
+      </div>
+
+      <!-- Loading indicator -->
+      <div id="loading-state" class="loading-state">
+        <div class="spinner"></div>
+        <p>Analyzing image…</p>
+      </div>
+
+      <button type="submit" id="btn-predict" class="btn-predict" disabled>
+        <span>Classify Image</span>
+      </button>
+
+    </form>
+  </div>
+  {% endif %}
+
+  <!-- ── Result ─────────────────────────────────────────────────────────────── -->
+  {% if result %}
+
+  {# Map each class to an emoji icon #}
+  {% set icons = {
+    'cardboard': '📦',
+    'glass':     '🫙',
+    'metal':     '🔩',
+    'paper':     '📄',
+    'plastic':   '🧴',
+    'trash':     '🗑️'
+  } %}
+
+  <div class="card result-section visible class-{{ result.top_class }}">
+
+    <div class="result-label">Prediction Result</div>
+
+    <!-- Top prediction -->
+    <div class="top-prediction">
+      <div class="class-icon">
+        {{ icons.get(result.top_class, '♻️') }}
+      </div>
+      <div class="top-prediction-text">
+        <h2>{{ result.top_class }}</h2>
+        <div class="confidence-number">
+          Confidence: <strong>{{ result.confidence }}%</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main confidence bar -->
+    <div class="confidence-bar-main">
+      <div class="fill" data-width="{{ result.confidence }}"></div>
+    </div>
+
+    <!-- Uploaded image -->
+    {% if image_url %}
+    <div class="preview-wrapper visible" style="margin-bottom: 20px;">
+      <img src="{{ image_url }}" alt="Uploaded image" />
+    </div>
+    {% endif %}
+
+    <div class="result-divider"></div>
+
+    <!-- Top-3 breakdown -->
+    <div class="top3-label">Top 3 Predictions</div>
+    <div class="top3-list">
+      {% for i, item in result.top3 | enumerate %}
+      <div class="top3-item class-{{ item.class }}">
+        <div class="top3-rank">#{{ i + 1 }}</div>
+        <div class="top3-bar-wrap">
+          <div class="top3-class-name">{{ item.class }}</div>
+          <div class="top3-bar">
+            <div class="fill" data-width="{{ item.confidence }}"></div>
+          </div>
+        </div>
+        <div class="top3-pct">{{ item.confidence }}%</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Try again -->
+    <form method="GET" action="/">
+      <button type="submit" class="btn-reset">← Classify another image</button>
+    </form>
+
+  </div>
+  {% endif %}
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>Powered by ResNet50 · TensorFlow 2.12 · Flask</p>
+  </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
