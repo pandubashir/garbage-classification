@@ -1,8 +1,19 @@
+---
+title: Garbage Classification
+emoji: 🗑️
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # 🗑️ Garbage Classification
 
-A deep learning web application that classifies waste images into 6 categories using Transfer Learning with ResNet50. Built with TensorFlow and deployed via Flask on Railway.
+A deep learning web application that classifies waste images into 6 categories using Transfer Learning with ResNet50. Built with TensorFlow and deployed via Flask on Hugging Face Spaces.
 
-**Live Demo:** [your-app.up.railway.app](https://your-app.up.railway.app) ← *update after deploy*
+**Live Demo:** [huggingface.co/spaces/p4nduu/garbage-classification](https://huggingface.co/spaces/p4nduu/garbage-classification)
 
 ---
 
@@ -113,6 +124,7 @@ garbage-classification/
 ├── notebook/
 │   └── Garbage_Classification_ResNet.ipynb
 │
+├── Dockerfile
 ├── requirements.txt
 ├── Procfile
 ├── runtime.txt
@@ -129,7 +141,7 @@ garbage-classification/
 | Base Model | ResNet50 (ImageNet weights) |
 | Web Framework | Flask 2.3 |
 | Production Server | Gunicorn |
-| Deployment | Railway |
+| Deployment | Hugging Face Spaces (Docker) |
 | Language | Python 3.10 |
 
 ---
@@ -138,7 +150,7 @@ garbage-classification/
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/yourusername/garbage-classification.git
+git clone https://github.com/pandubashir/garbage-classification.git
 cd garbage-classification
 ```
 
@@ -174,36 +186,6 @@ Open [http://localhost:5000](http://localhost:5000) in your browser.
 
 ---
 
-## 🚀 Deploy to Railway
-
-**1. Push to GitHub**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/yourusername/garbage-classification.git
-git push -u origin main
-```
-
-**2. Deploy on Railway**
-- Go to [railway.app](https://railway.app) → New Project
-- Select **Deploy from GitHub repo**
-- Choose your repository
-- Railway auto-detects Python via `requirements.txt`
-
-**3. Set environment variable** *(optional but recommended)*
-```
-SECRET_KEY = your-random-secret-key
-```
-
-**4. Generate domain**
-- Settings → Networking → **Generate Domain**
-
-> The app may take 60–90 seconds on first load (cold start) while TensorFlow loads the model into memory. Subsequent requests are fast.
-
----
-
 ## 📦 Dataset
 
 - **Source:** [Garbage Classification Dataset](https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification) on Kaggle
@@ -224,8 +206,8 @@ SECRET_KEY = your-random-secret-key
 
 ## 👤 Author
 
-**[Your Name]**
-- GitHub: [@yourusername](https://github.com/yourusername)
+**Pandu Bashir**
+- GitHub: [@pandubashir](https://github.com/pandubashir)
 - LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
 
 ---
