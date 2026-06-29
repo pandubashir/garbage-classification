@@ -137,6 +137,125 @@
   </div>
   {% endif %}
 
+  <!-- ── Info Section ──────────────────────────────────────────────────────── -->
+  <div class="info-section">
+
+    <!-- About -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <span class="info-icon">🧠</span>
+        <h3>About This Project</h3>
+      </div>
+      <p>
+        This app is a portfolio project demonstrating end-to-end machine learning —
+        from model training to production deployment. It uses <strong>Transfer Learning</strong>
+        with ResNet50 pre-trained on ImageNet, fine-tuned on a waste classification dataset.
+        The goal is to show how computer vision can automate waste sorting,
+        a real-world problem relevant to recycling and environmental sustainability.
+      </p>
+    </div>
+
+    <!-- Model Stats -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <span class="info-icon">📊</span>
+        <h3>Model Performance</h3>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">92.4%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">0.231</div>
+          <div class="stat-label">Val Loss</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">0.92</div>
+          <div class="stat-label">F1-Score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">251</div>
+          <div class="stat-label">Test Samples</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dataset -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <span class="info-icon">🗃️</span>
+        <h3>Dataset — 6 Waste Categories</h3>
+      </div>
+      <div class="dataset-grid">
+        <div class="dataset-item">
+          <span class="dataset-emoji">📦</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Cardboard</div>
+            <div class="dataset-desc">Boxes, cartons, packaging</div>
+          </div>
+        </div>
+        <div class="dataset-item">
+          <span class="dataset-emoji">🫙</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Glass</div>
+            <div class="dataset-desc">Bottles, jars, containers</div>
+          </div>
+        </div>
+        <div class="dataset-item">
+          <span class="dataset-emoji">🔩</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Metal</div>
+            <div class="dataset-desc">Cans, foil, scrap metal</div>
+          </div>
+        </div>
+        <div class="dataset-item">
+          <span class="dataset-emoji">📄</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Paper</div>
+            <div class="dataset-desc">Newspapers, magazines, office paper</div>
+          </div>
+        </div>
+        <div class="dataset-item">
+          <span class="dataset-emoji">🧴</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Plastic</div>
+            <div class="dataset-desc">Bottles, bags, containers</div>
+          </div>
+        </div>
+        <div class="dataset-item">
+          <span class="dataset-emoji">🗑️</span>
+          <div class="dataset-text">
+            <div class="dataset-name">Trash</div>
+            <div class="dataset-desc">General non-recyclable waste</div>
+          </div>
+        </div>
+      </div>
+      <p class="dataset-source">
+        Source: <a href="https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification" target="_blank">Kaggle — Garbage Classification Dataset</a>
+      </p>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="info-card">
+      <div class="info-card-header">
+        <span class="info-icon">🛠️</span>
+        <h3>Tech Stack</h3>
+      </div>
+      <div class="tech-list">
+        <div class="tech-item"><span class="tech-badge">Model</span> ResNet50 · Transfer Learning · TensorFlow 2.12</div>
+        <div class="tech-item"><span class="tech-badge">Backend</span> Flask 2.3 · Gunicorn · Python 3.10</div>
+        <div class="tech-item"><span class="tech-badge">Deploy</span> Hugging Face Spaces · Docker</div>
+        <div class="tech-item"><span class="tech-badge">Source</span>
+          <a href="https://github.com/pandubashir/garbage-classification" target="_blank">
+            github.com/pandubashir/garbage-classification
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <!-- ── Footer ─────────────────────────────────────────────────────────────── -->
   <footer class="footer">
     <p>Powered by ResNet50 · TensorFlow 2.12 · Flask</p>
