@@ -49,7 +49,7 @@ body {
 
 /* ── Layout ────────────────────────────────────────────────────────────────── */
 .page-wrapper {
-  max-width: 680px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 48px 24px 80px;
 }
@@ -504,6 +504,114 @@ body {
   .header h1    { font-size: 1.5rem; }
   .card         { padding: 20px; }
   .top-prediction-text h2 { font-size: 1.3rem; }
+}
+
+/* ── Bento Grid System ─────────────────────────────────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Upload card: 8/12 columns */
+.bento-upload {
+  grid-column: span 8;
+  margin-bottom: 0;
+}
+
+/* Stat pair: 4/12 columns, two stacked cards */
+.bento-stat-pair {
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bento-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+  text-align: center;
+}
+
+.bento-stat-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.bento-stat-value.accent { color: var(--accent); }
+
+.bento-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+
+/* Dataset tiles: 4/12 each, 3 per row */
+.bento-tile {
+  grid-column: span 4;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.bento-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-focus);
+}
+
+.bento-tile-emoji { font-size: 1.4rem; }
+
+.bento-tile-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--text-primary);
+}
+
+.bento-tile.class-cardboard { background: rgba(217,119,6,0.08); }
+.bento-tile.class-glass     { background: rgba(6,182,212,0.08); }
+.bento-tile.class-metal     { background: rgba(148,163,184,0.08); }
+.bento-tile.class-paper     { background: rgba(167,139,250,0.08); }
+.bento-tile.class-plastic   { background: rgba(244,114,182,0.08); }
+.bento-tile.class-trash     { background: rgba(107,114,128,0.08); }
+
+/* Half-width info cards: 6/12 each */
+.bento-half {
+  grid-column: span 6;
+  margin-bottom: 0;
+}
+
+/* Full-width cards: 12/12 */
+.bento-full {
+  grid-column: span 12;
+  margin-bottom: 0;
+}
+
+/* Responsive bento — stack on mobile */
+@media (max-width: 600px) {
+  .bento-grid { grid-template-columns: repeat(6, 1fr); }
+  .bento-upload    { grid-column: span 6; }
+  .bento-stat-pair { grid-column: span 6; flex-direction: row; }
+  .bento-tile      { grid-column: span 2; }
+  .bento-half      { grid-column: span 6; }
+  .bento-full      { grid-column: span 6; }
 }
 
 /* ── Reduced motion ────────────────────────────────────────────────────────── */
