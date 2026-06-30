@@ -152,65 +152,37 @@
   </div>
   {% endif %}
 
-  <!-- ── Dataset Classes (bento: 6 small tiles) ──────────────────────────────── -->
-  <div class="bento-tile class-cardboard">
+  <!-- ── Dataset Classes (bento: compact strip, 1 row) ───────────────────────── -->
+  <div class="bento-tile-strip class-cardboard">
     <span class="bento-tile-emoji">📦</span>
     <span class="bento-tile-label">cardboard</span>
   </div>
-  <div class="bento-tile class-glass">
+  <div class="bento-tile-strip class-glass">
     <span class="bento-tile-emoji">🫙</span>
     <span class="bento-tile-label">glass</span>
   </div>
-  <div class="bento-tile class-metal">
+  <div class="bento-tile-strip class-metal">
     <span class="bento-tile-emoji">🔩</span>
     <span class="bento-tile-label">metal</span>
   </div>
-  <div class="bento-tile class-paper">
+  <div class="bento-tile-strip class-paper">
     <span class="bento-tile-emoji">📄</span>
     <span class="bento-tile-label">paper</span>
   </div>
-  <div class="bento-tile class-plastic">
+  <div class="bento-tile-strip class-plastic">
     <span class="bento-tile-emoji">🧴</span>
     <span class="bento-tile-label">plastic</span>
   </div>
-  <div class="bento-tile class-trash">
+  <div class="bento-tile-strip class-trash">
     <span class="bento-tile-emoji">🗑️</span>
     <span class="bento-tile-label">trash</span>
   </div>
 
-  <!-- ── About (bento: half width) ─────────────────────────────────────────── -->
-  <div class="card info-card bento-half">
-    <div class="info-card-header">
-      <span class="info-icon">🧠</span>
-      <h3>About This Project</h3>
-    </div>
-    <p>
-      Aplikasi ini merupakan portfolio project yang mendemonstrasikan pipeline machine learning secara end-to-end —
-      mulai dari training model hingga deployment ke production. Aplikasi menggunakan <strong>Transfer Learning</strong>
-      dengan ResNet50 yang telah di-pretrain pada ImageNet, kemudian di-fine-tune pada dataset klasifikasi sampah.
-      Tujuannya adalah menunjukkan bagaimana computer vision dapat mengotomatisasi pemilahan sampah,
-      sebuah permasalahan nyata yang relevan dengan daur ulang dan keberlanjutan lingkungan.
-    </p>
-  </div>
-
-  <!-- ── Tech Stack (bento: half width) ────────────────────────────────────── -->
-  <div class="card info-card bento-half">
-    <div class="info-card-header">
-      <span class="info-icon">🛠️</span>
-      <h3>Tech Stack</h3>
-    </div>
-    <div class="tech-list">
-      <div class="tech-item"><span class="tech-badge">Model</span> ResNet50 · Transfer Learning · TensorFlow 2.12</div>
-      <div class="tech-item"><span class="tech-badge">Backend</span> Flask 2.3 · Gunicorn · Python 3.10</div>
-      <div class="tech-item"><span class="tech-badge">Deploy</span> Hugging Face Spaces · Docker</div>
-    </div>
-  </div>
-
-  <!-- ── Model Stats Detail (bento: full width) ──────────────────────────────── -->
-  <div class="card info-card bento-full">
+  <!-- ── Model Performance (bento: full width, featured) ─────────────────────── -->
+  <div class="card info-card bento-full bento-featured">
     <div class="info-card-header">
       <span class="info-icon">📊</span>
-      <h3>Model Performance Detail</h3>
+      <h3>Model Performance</h3>
     </div>
     <div class="stats-grid">
       <div class="stat-item">
@@ -233,6 +205,34 @@
     <p class="dataset-source" style="margin-top: 14px;">
       Dataset source: <a href="https://www.kaggle.com/datasets/asdasdasasdas/garbage-classification" target="_blank">Kaggle — Garbage Classification Dataset</a>
     </p>
+  </div>
+
+  <!-- ── About (bento: half width, secondary) ────────────────────────────────── -->
+  <div class="card info-card bento-half bento-secondary">
+    <div class="info-card-header">
+      <span class="info-icon">🧠</span>
+      <h3>About This Project</h3>
+    </div>
+    <p>
+      Aplikasi ini merupakan portfolio project yang mendemonstrasikan pipeline machine learning secara end-to-end —
+      mulai dari training model hingga deployment ke production. Aplikasi menggunakan <strong>Transfer Learning</strong>
+      dengan ResNet50 yang telah di-pretrain pada ImageNet, kemudian di-fine-tune pada dataset klasifikasi sampah.
+      Tujuannya adalah menunjukkan bagaimana computer vision dapat mengotomatisasi pemilahan sampah,
+      sebuah permasalahan nyata yang relevan dengan daur ulang dan keberlanjutan lingkungan.
+    </p>
+  </div>
+
+  <!-- ── Tech Stack (bento: half width, secondary) ───────────────────────────── -->
+  <div class="card info-card bento-half bento-secondary">
+    <div class="info-card-header">
+      <span class="info-icon">🛠️</span>
+      <h3>Tech Stack</h3>
+    </div>
+    <div class="tech-list">
+      <div class="tech-item"><span class="tech-badge">Model</span> ResNet50 · Transfer Learning · TensorFlow 2.12</div>
+      <div class="tech-item"><span class="tech-badge">Backend</span> Flask 2.3 · Gunicorn · Python 3.10</div>
+      <div class="tech-item"><span class="tech-badge">Deploy</span> Hugging Face Spaces · Docker</div>
+    </div>
   </div>
 
   </div><!-- /.bento-grid -->
